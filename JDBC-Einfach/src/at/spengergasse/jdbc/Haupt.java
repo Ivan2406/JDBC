@@ -17,7 +17,7 @@ public class Haupt
 		try 
 		{
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/jdbcuebung?user=root&password=");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/jdbceinfach?user=root&password=");
 			Statement stmt = conn.createStatement();
 
 			System.out.println("---Start---");

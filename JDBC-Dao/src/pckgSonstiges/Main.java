@@ -1,4 +1,3 @@
-
 package pckgSonstiges;
 
 import java.sql.Connection;
@@ -21,7 +20,7 @@ public class Main
 
 		Lehrer l1 = new Lehrer(1, "Gustav", "Zimmerer");
 		Lehrer l2 = new Lehrer(2, "Peter", "Maurer");
-		Lehrer l3 = new Lehrer(3, "Thomas", "Müller");
+		Lehrer l3 = new Lehrer(3, "Thomas", "Mï¿½ller");
 		
 		Klassen k1 = new Klassen ("4AHIF");
 		Klassen k2 = new Klassen ("4BHIFS");
@@ -34,7 +33,7 @@ public class Main
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/jdbcuebung2?user=root&password=");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost/jdbcdao?user=root&password=");
 			Statement stmt = con.createStatement();
 			
 			
@@ -86,7 +85,7 @@ public class Main
 				System.out.println("Im Catch-Block nach rs.first() -> tabelle leer");
 			}
 			
-			System.out.println("---löschen aller Klassen---");
+			System.out.println("---lï¿½schen aller Klassen---");
 			rs = stmt.executeQuery("delete from klassen where 1 = 1");
 			try
 			{
@@ -97,7 +96,7 @@ public class Main
 				System.out.println("Im Catch-Block nach rs.first() -> tabelle leer");
 			}
 			
-			System.out.println("---löschen aller lehrer---");
+			System.out.println("---lï¿½schen aller lehrer---");
 			rs = stmt.executeQuery("delete from lehrer where 1 = 1");
 			try
 			{

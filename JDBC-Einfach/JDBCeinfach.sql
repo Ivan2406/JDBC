@@ -1,4 +1,4 @@
-﻿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
@@ -27,40 +27,37 @@ USE `jdbceinfach`;
 --
 -- 
 
-Tabellenstruktur für Tabelle `klasse`
+-- Tabellenstruktur fÃ¼r Tabelle `abteilung`
 --
 
 
-CREATE TABLE IF NOT EXISTS `klasse` (
-  `id` varchar(5) NOT NULL,
+CREATE TABLE IF NOT EXISTS `abteilung` (
+  `name` varchar(30) NOT NULL,
  
-					 PRIMARY KEY (`id`)
+					 PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 --
--- Daten für Tabelle `klasse`
+-- Daten fÃ¼r Tabelle `abteilung`
 
 --
 
-INSERT INTO `klasse` (`id`) VALUES
-('1a'),
-('2b'),
-('3c'),
-('4a'),
-('5b'),
-('5c');
+INSERT INTO `abteilung` (`name`) VALUES
+('Marketing'),
+('Geschäftsleitung'),
+('Personalabteilung');
 
 --
- --------------------------------------------------------
+-- --------------------------------------------------------
 
 --
 -- 
-Tabellenstruktur für Tabelle `schueler`
+-- Tabellenstruktur fÃ¼r Tabelle `mitarbeiter`
 --
 
 
-CREATE TABLE IF NOT EXISTS `schueler` (
+CREATE TABLE IF NOT EXISTS `mitarbeiter` (
 
 `id` int(11) NOT NULL,
   
@@ -68,26 +65,24 @@ CREATE TABLE IF NOT EXISTS `schueler` (
   
 `nachname` varchar(20) DEFAULT NULL,
   
-`klasse` varchar(5) DEFAULT NULL,
+`abteilung` varchar(5) DEFAULT NULL,
   
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 --
--- Daten für Tabelle `schueler`
+-- Daten fÃ¼r Tabelle `mitarbeiter`
 --
 
 
-INSERT INTO `schueler` (`id`, `vorname`, `nachname`, `klasse`) VALUES
+INSERT INTO `mitarbeiter` (`id`, `vorname`, `nachname`, `abteilung`) VALUES
 
-(1, 'Max', 'Mustermann', '1a'),
+(1, 'Max', 'Mustermann', 'Marketing'),
 
-(2, 'Thomas', 'Müller', '2b');
+(2, 'Franz', 'Gustav', 'Geschäftsleitung'),
 
-(3, 'Franz', 'Gustav', '1a'),
-
-(4, 'Johannes', 'Jäger', '2b');
+(3, 'Thomas', 'Müller', 'Personalabteilung');
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -28,13 +28,13 @@ public class Haupt
 			
 			System.out.println("-- INSERT zur Abteilung Technik --");
 			
-			stmt.executeUpdate("insert into klasse values('Technik')");
+			stmt.executeUpdate("insert into abteilung values('Technik')");
 			
 			rs = stmt.executeQuery("SELECT * FROM abteilung;");
 
 			showRS(rs,1);
 
-			stmt.executeUpdate("delete from abteilung where id = 'Technik';");
+			stmt.executeUpdate("delete from abteilung where name = 'Technik';");
 			
 			System.out.println("-- Löschung von Abteilung Technik durchgeführt --");
 			

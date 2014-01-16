@@ -17,16 +17,16 @@ public class Haupt
 		try 
 		{
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
-			conn = DriverManager.getConnection("jdbc:mysql://localhost/jdbceinfach?user=root&password=");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost/JDBCeinfach?user=root&password=");
 			Statement stmt = conn.createStatement();
 
-			System.out.println("---Start---");
+			System.out.println("-- Start --");
 			
 			ResultSet rs = stmt.executeQuery("SELECT * FROM klasse;");
 
 			showRS(rs,1);
 			
-			System.out.println("---Insert von 5a---");
+			System.out.println("-- INSERT zur Klassen 5a --");
 			
 			stmt.executeUpdate("insert into klasse values('5a')");
 			
@@ -36,7 +36,7 @@ public class Haupt
 
 			stmt.executeUpdate("delete from klasse where id = '5a';");
 			
-			System.out.println("---jetzt nach delete von 5a---");
+			System.out.println("-- Löschung von Klasse 5a durchgeführt --");
 			
 			rs = stmt.executeQuery("SELECT * FROM klasse;");
 
@@ -47,13 +47,14 @@ public class Haupt
 			
 			rs = pstmt.executeQuery();
 
-			System.out.println("---schueler mit preparedstatement selectet---");
+			System.out.println("-- Schüler mit PreparedStatement ausgegeben --");
 			showRS(rs,4);
 			
 			pstmt.close();
 			
 			rs.close();
-		} catch (Exception e) 
+		} 
+		catch (Exception e) 
 		{
 			e.printStackTrace();
 		} 

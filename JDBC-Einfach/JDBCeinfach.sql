@@ -81,9 +81,13 @@ PRIMARY KEY (`id`)
 
 INSERT INTO `schueler` (`id`, `vorname`, `nachname`, `klasse`) VALUES
 
-(1, 'vorname1', 'nachname1', '1a'),
+(1, 'Max', 'Mustermann', '1a'),
 
-(2, 'vorname2', 'nachname2', '2b');
+(2, 'Thomas', 'Müller', '2b');
+
+(3, 'Franz', 'Gustav', '1a'),
+
+(4, 'Johannes', 'Jäger', '2b');
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

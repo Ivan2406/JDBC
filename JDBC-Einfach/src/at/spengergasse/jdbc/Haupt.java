@@ -22,32 +22,32 @@ public class Haupt
 
 			System.out.println("-- Start --");
 			
-			ResultSet rs = stmt.executeQuery("SELECT * FROM klasse;");
+			ResultSet rs = stmt.executeQuery("SELECT * FROM abteilung;");
 
 			showRS(rs,1);
 			
-			System.out.println("-- INSERT zur Klassen 5a --");
+			System.out.println("-- INSERT zur Abteilung Technik --");
 			
-			stmt.executeUpdate("insert into klasse values('5a')");
+			stmt.executeUpdate("insert into klasse values('Technik')");
 			
-			rs = stmt.executeQuery("SELECT * FROM klasse;");
+			rs = stmt.executeQuery("SELECT * FROM abteilung;");
 
 			showRS(rs,1);
 
-			stmt.executeUpdate("delete from klasse where id = '5a';");
+			stmt.executeUpdate("delete from abteilung where id = 'Technik';");
 			
-			System.out.println("-- Löschung von Klasse 5a durchgeführt --");
+			System.out.println("-- Löschung von Abteilung Technik durchgeführt --");
 			
-			rs = stmt.executeQuery("SELECT * FROM klasse;");
+			rs = stmt.executeQuery("SELECT * FROM abteilung;");
 
 			showRS(rs,1);
 			stmt.close();			
 			
-			PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement("select * from schueler;");
+			PreparedStatement pstmt = (PreparedStatement) conn.prepareStatement("select * from mitarbeiter;");
 			
 			rs = pstmt.executeQuery();
 
-			System.out.println("-- Schüler mit PreparedStatement ausgegeben --");
+			System.out.println("-- Mitarbeiter mit PreparedStatement ausgegeben --");
 			showRS(rs,4);
 			
 			pstmt.close();
